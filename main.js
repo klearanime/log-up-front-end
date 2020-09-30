@@ -55,8 +55,20 @@ const password3 = 'like a BOSS';
 // your code below!
 
 
-
-
+  if (getEmail() === isRegisteredUser() && getPassword() === passwordMatches()) {
+  console.log('You are logged in!')
+} else if (getEmail() === isRegisteredUser() && !getPassword()) {
+  console.log('Invalid password try again.')
+} else if (getEmail() !== isRegisteredUser() && getEmail() === isValidEmail() && 
+            getPassword() === isValidPassword()) {
+  console.log('Sign-up was successful!')
+} else if (getEmail() !== isRegisteredUser() && !isValidEmail()) {
+  console.log('That e-mail is not valid.')
+  console.log('Email must have the the domain - @codeimmersives.com')
+} else if (getEmail() === !isRegisteredUser() && getPassword() !== isValidPassword()) {
+  console.log('Wrong password, try again.')
+  console.log('Must be at least 8 characters long with uppercase and lowercase letters.')
+}
 
 
 
